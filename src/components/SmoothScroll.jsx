@@ -4,8 +4,11 @@ import Lenis from "lenis";
 export function SmoothScroll({ children }) {
   useEffect(() => {
     const lenis = new Lenis({
-      smooth: true,
-      lerp: 0.1,
+      duration: 1.2,
+      smoothWheel: true,
+      smoothTouch: false,
+      gestureOrientation: "vertical",
+      normalizeWheel: true,
     });
 
     function raf(time) {
@@ -15,10 +18,15 @@ export function SmoothScroll({ children }) {
 
     requestAnimationFrame(raf);
 
+ 
+    document.documentElement.style.height = "auto";
+    document.body.style.height = "auto";
+    document.body.style.overflow = "auto";
+
     return () => {
       lenis.destroy();
     };
   }, []);
 
-  return <>{children}</>;
+  return children;
 }

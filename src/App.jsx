@@ -17,7 +17,7 @@ function App() {
       </div>
 
       <SmoothScroll>
-        <div className="relative min-h-screen w-screen bg-black overflow-hidden">
+        <div className="relative min-h-screen w-screen bg-black">
           {/* Gradients */}
           <div
             className="pointer-events-none absolute bottom-0 left-0 w-full h-1/3
@@ -42,7 +42,7 @@ function App() {
             </main>
           </div>
         </div>
-      </SmoothScroll>
+      </SmoothScroll >
     </>
   );
 }

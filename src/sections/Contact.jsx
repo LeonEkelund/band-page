@@ -5,7 +5,7 @@ export function Contact() {
       className="w-screen flex justify-center py-28 text-white"
     >
       <div className="w-full max-w-6xl px-6">
-        {/* Section label – same style as Music */}
+        {/* Section label */}
         <h2 className="text-xs uppercase tracking-[0.35em] text-white/60 mb-10">
           Contact
         </h2>

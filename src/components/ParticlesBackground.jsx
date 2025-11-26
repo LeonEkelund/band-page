@@ -8,7 +8,7 @@ export function ParticlesBackground() {
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
-      // Slim bundle is enough for this use case
+
       await loadSlim(engine);
     }).then(() => {
       setReady(true);
@@ -21,7 +21,7 @@ export function ParticlesBackground() {
     <Particles
       id="embers"
       options={{
-        fullScreen: { enable: false }, // we control size via parent
+        fullScreen: { enable: false }, 
         background: { color: "transparent" },
         fpsLimit: 120,
 
@@ -31,14 +31,14 @@ export function ParticlesBackground() {
             density: { enable: true, area: 900 },
           },
 
-          // bright cores, we tint with CSS glow
+     
           color: {
             value: "#ffffff",
           },
 
           shape: { type: "circle" },
 
-          // small, slightly varied dots
+     
           size: {
             value: { min: 0.3, max: 1.8 },
             animation: {
@@ -49,7 +49,7 @@ export function ParticlesBackground() {
             },
           },
 
-          // subtle, slow flicker = life
+      
           opacity: {
             value: 0.7,
             random: { enable: true, minimumValue: 0.4 },
@@ -61,7 +61,7 @@ export function ParticlesBackground() {
             },
           },
 
-          // gentle wandering, no strong direction
+     
           move: {
             enable: true,
             direction: "none",
@@ -76,7 +76,7 @@ export function ParticlesBackground() {
             },
           },
 
-          // depth / layering – smaller ones can feel “further”
+      
           zIndex: {
             value: {
               min: 0,
@@ -86,7 +86,7 @@ export function ParticlesBackground() {
             sizeRate: 1,
           },
 
-          // makes them behave more like light
+ 
           blendMode: "screen",
         },
 

@@ -4,27 +4,51 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="w-screen min-h-screen flex items-center flex-col justify-center text-white px-6"
+      className="w-screen min-h-[80vh] flex items-center flex-col justify-center text-white px-6"
+
     >
       <div className="w-full max-w-6xl flex flex-col lg:flex-row items-center lg:items-start gap-14">
         <div className="flex-1 text-center lg:text-left">
-          <motion.h1
-            initial={{ opacity: 0, y: -40, letterSpacing: "0.6em" }}
-            animate={{ opacity: 1, y: 0, letterSpacing: "0.35em" }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            className="text-[14vw] lg:text-[7vw] font-display tracking-[0.35em]"
-          >
-            THROWN
-          </motion.h1>
+          <div className="relative text-center lg:text-left">
+            <motion.h1
+              initial={{ opacity: 0, y: -10 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                backgroundPosition: ["100% 40%", "75% 20%"],
+              }}
+              transition={{
+                opacity: { duration: 1, ease: "easeOut" },
+                y: { duration: 1, ease: "easeOut" },
+                backgroundPosition: {
+                  duration: 60,
+                  repeat: Infinity,
+                  repeatType: "mirror",
+                  ease: "linear",
+                },
+              }}
+              className="text-[17vw] lg:text-[9vw] font-display font-black leading-none tracking-[0.35em]"
+              style={{
+                backgroundImage: "url('/throwncd.png')",
+                backgroundSize: "150%",
+                WebkitBackgroundClip: "text",
+                backgroundClip: "text",
+                color: "transparent",
+              }}
+            >
+              THROWN
+            </motion.h1>
+          </div>
+
+
+
+
+
+
 
           {/* Small descriptor */}
           <p className="mt-4 text-xs lg:text-sm uppercase tracking-[0.25em] text-white/60">
             HEAVY MODERN METAL • STOCKHOLM
-          </p>
-
-          {/* Tagline */}
-          <p className="mt-4 text-sm lg:text-base text-white/70 max-w-md mx-auto lg:mx-0">
-            Noise, pressure and impact. New music out now.
           </p>
 
           {/* CTAs */}
